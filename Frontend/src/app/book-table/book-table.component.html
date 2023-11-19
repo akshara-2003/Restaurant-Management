@@ -1,0 +1,24 @@
+<div class="cont">
+    <div class="card" style="padding: 30px;">
+        <h1 class="text-centre">Book a Table</h1>
+        <form [formGroup]="reservationForm">
+          <div>
+            <label for="startDateTime">Start Date Time :</label>
+            <input type="datetime-local" id="startDateTime" formControlName="startDateTime"/>
+          </div>
+          <div>
+            <label for="endDateTime">End Date Time :</label>
+            <input type="datetime-local" id="endDateTime" formControlName="endDateTime"/>
+          </div>  
+           <button class="btn" (click)="checkAvailability()" >Check  Availability</button>  
+        </form>
+            <div *ngIf="availableTables&&availableTables.length>0">
+              <h2>Available Tables</h2>
+              <ul>
+                <li *ngFor="let table of availableTables">
+                  <button (click)="bookTable(table.id)" *ngIf="!table.isTableBooked">Book</button>
+                </li>
+              </ul>
+            </div>
+    </div>
+</div>

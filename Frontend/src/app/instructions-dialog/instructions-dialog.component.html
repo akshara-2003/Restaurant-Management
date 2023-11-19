@@ -1,0 +1,15 @@
+<h2>{{item.name}}</h2>
+<h2 mat-dialog-title>Do you want to add any Instructions or Customization?</h2>
+<mat-dialog-content>
+    <form [formGroup]="instructionForm" class="d-flex justify-content-evenly" (submit)="onSubmit()">
+        <mat-form-field>
+            <mat-label>Add instructions</mat-label>
+            <input matInput formControlName="instructions">
+        </mat-form-field>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button class="btn btn-primary" (click)="closeDialog()">Cancel</button>
+    <button class="btn btn-danger" (click)="onSubmit()">Add</button>
+</mat-dialog-actions>
+

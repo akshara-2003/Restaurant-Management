@@ -1,0 +1,37 @@
+<div class="container">
+  <div *ngIf="cartItems.length==0" class="d-flex flex-column align-items-center justify-content-center add" style="gap: 10px;">
+    <img src="./assets/empty-cart.webp" alt="" style="width: 200px;">
+    <h1>Your cart looks empty</h1>
+    <button class="btn btn-primary" routerLink="/menu">Add Items</button>
+  </div>
+    <div class="row">
+      <h1 *ngIf="cartItems.length>0">Cart</h1>
+      <div  *ngFor="let cartItem of cartItems,let index=index">
+        
+       <div class="card" *ngIf="cartItem.menuItem!=null ">
+        <div class="image" >
+          <!-- {{cartItem|json}} -->
+          <img src="{{cartItem.menuItem.imageUrl}}" class="card-img-top" alt="{{cartItem.menuItem.itemName}}">
+        </div>
+        <div class="content"> 
+          <h5 class="card-title">{{cartItem.menuItem.itemName}}</h5>
+          <p class="card-text">{{cartItem.menuItem.category}}</p>
+          <p class="card-price">{{cartItem.menuItem.itemPrice | currency}}</p>
+          <p class="instructions" style="color: red;">{{cartItem.instructions}}</p>
+          <button class="btn" (click)="removeFromCart(cartItem)">Remove</button>
+          <div class="quantity">
+            
+            <button class="btn" (click)="decreaseQuantity(cartItem,index)">-</button>
+            {{cartItem.quantity}}
+            <button class="btn" (click)="increaseQuantity(cartItem,index)">+</button>
+          </div>
+        </div>
+      </div>
+       </div>
+       <p *ngIf="cartItems.length>0">Total value:{{calculateTotalValue()}}</p>
+       <button *ngIf="cartItems.length>0" class=" btn btn-primary check-btn" (click)="checkout()">Checkout</button>
+      </div>
+</div>
+
+ <!-- <p>Total Value:{{totalValue}}</p>
+    <button (click)="checkout()">Checkout</button> -->

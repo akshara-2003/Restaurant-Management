@@ -1,0 +1,65 @@
+<!-- <h1>{{currentUser.staffName}}</h1> -->
+<div class="body">
+    <div class="hero jumbotron jumbotron-fluid" id="hero">
+        <div class="hero-inner container d-flex justify-content-between flex-wrap">
+          <div class="d-flex flex-column judtify-content-center align-items-center">
+            <h1 class="text-white">FineDine</h1>
+            <p class="text-white">Where every flavor tells a story</p>
+          </div>
+          <div class="card">
+            <div class="upper">
+
+                <img src="https://i.imgur.com/Qtrsrk5.jpg" class="img-fluid">
+                
+              </div>
+
+              <div class="user text-center">
+
+                <div class="profile">
+
+                  <img src="https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?s=612x612&w=0&k=20&c=BIbFwuv7FxTWvh5S3vB6bkT0Qv8Vn8N5Ffseq84ClGI=" class="rounded-circle" width="80">
+                  
+                </div>
+
+              </div>
+
+
+              <div class="mt-5 text-center">
+
+                <h4 class="mb-0 mt-2">{{currentUser.staffName}}</h4>
+                <span class="text-muted d-block mb-2">FineDine</span>
+
+                <!-- <button class="btn btn-primary btn-sm follow">Follow</button> -->
+
+
+                <div class="d-flex justify-content-center align-items-center mt-4 px-4" style="gap: 35px;">
+
+                  <div class="stats">
+                    <h6 class="mb-0">Shift</h6>
+                    <span>{{currentUser.shift}}</span>
+
+                  </div>
+
+
+                  <div class="stats">
+                    <h6 class="mb-0">Rating</h6>
+                    <span>{{currentUser.rating}} <i class="bi bi-star-fill" style="font-size: 20px;"></i></span>
+
+                  </div>
+
+
+                  <div class="stats">
+                    <h6 class="mb-0">Bonus</h6>
+                    <span>{{bonus|currency:'INR'}}</span>
+                  </div>
+                </div>
+                <div class="stats">
+                    <h6 class="mb-0">Salary</h6>
+                    <span>{{totalSalary|currency:'INR'}}</span>
+                  </div>
+              </div>
+               
+          </div>
+        </div>
+    </div>
+</div>

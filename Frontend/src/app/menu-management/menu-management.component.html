@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="d-flex justify-content-center flex-column align-items-center" style="margin-bottom: 10px;">
+        <h1 class="text-center">Menu</h1>
+        <button class="btn btn-primary "  (click)="openAddItemDialog()">Add item +</button>
+    </div> 
+      
+    <div class="row">
+      <div class="card" *ngFor="let item of menuData,let index=index">
+        <div class="image">
+          <img src="{{item.imageUrl}}" class="card-img-top" alt="{{item.itemName}}">
+        </div>
+        <div class="content"> 
+          <h5 class="card-title">{{item.itemName}}</h5>
+          <p class="card-text">{{item.category}}</p>
+          <p class="card-price">{{item.itemPrice | currency:'INR'}}</p>
+          <div class="d-flex justify-content-center" style="gap: 15px;">
+            <i class="bi bi-pencil" style="font-size: 20px; cursor: pointer;" (click)="openEditFormDialog(item,index)"></i>
+            <i class="bi bi-trash" style="font-size: 20px; cursor: pointer;" (click)="deleteItem(item.itemId)"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+</div>

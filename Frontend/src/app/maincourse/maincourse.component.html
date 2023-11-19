@@ -1,0 +1,17 @@
+<div class="container">
+    <h1 class="text-center">Main Course</h1>
+    <div class="row">
+      <div class="card" *ngFor="let item of maincourseData">
+        <div class="image">
+          <img src="{{item.imageUrl}}" class="card-img-top" alt="{{item.itemName}}">
+        </div>
+        <div class="content"> 
+          <h5 class="card-title">{{item.itemName}}</h5>
+          <p class="card-text">{{item.category}}</p>
+          <p class="card-price">{{item.itemPrice | currency}}</p>
+          <button class="btn" *ngIf="authService.currentUser==null" (click)="openLoginWarning()">Add+</button>
+          <button class="btn" *ngIf="authService.currentUser!=null" (click)=" openInstructionsDialog(item)">Add + </button>
+        </div>
+      </div>
+    </div>
+</div>

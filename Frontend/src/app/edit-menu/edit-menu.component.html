@@ -1,0 +1,55 @@
+<div class="mat-dialog-content">
+    <section class="vh-100  d-flex  justify-content-center align-items-center" style="background-color: white">
+        <div class="container py-5 h-100">
+            <div class="row d-flex  justify-content-center align-items-center h-100">
+            <div class="col col-xl-8">
+                <div class="card" style="border-radius: 1rem;">
+                    <div class="row g-0">
+                    <div class="col-md-6 col-lg-5 d-none d-md-block">
+                        <img src="https://images.pexels.com/photos/2280545/pexels-photo-2280545.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"      
+                                alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
+                            </div>
+                         <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                                <div class="card-body p-4 p-lg-5 text-black">
+    
+                                    <form [formGroup]="editItemForm">
+    
+                                        <div class="d-flex align-items-center mb-3 pb-1">
+                                          
+                                            <span class="h1 fw-bold mb-0">Update Item</span>
+                                        </div>
+                                        <div class="form-outline mb-4">
+                                            <input type="text" id="form2Example17" class="form-control form-control-lg" formControlName="itemName"/>
+                                            <label class="form-label" for="form2Example17">Item Name</label>
+                                        </div>
+    
+                                        <div class="form-outline mb-4">
+                                            <input type="txet" id="form2Example27"
+                                                class="form-control form-control-lg" formControlName="category"/>
+                                            <label class="form-label" for="form2Example27">Category</label>
+                                        </div>
+                                        <div class="form-outline mb-4">
+                                            <input type="txet" id="form2Example27"
+                                                class="form-control form-control-lg" formControlName="itemPrice"/>
+                                            <label class="form-label" for="form2Example27">Price</label>
+                                        </div>
+                                        <div class="form-outline mb-4">
+                                            <input type="txet" id="form2Example27"
+                                                class="form-control form-control-lg" formControlName="imageUrl"/>
+                                            <label class="form-label" for="form2Example27">Image link</label>
+                                        </div>
+                                        <div class="pt-1 mb-4">
+                                            <button class="btn btn-dark btn-lg btn-secondary" type="button" (click)="editItem()">Update</button>
+                                            <button type="button" class="btn btn-danger btn-lg btn-danger" (click)="closeDialog()">Cancel</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+

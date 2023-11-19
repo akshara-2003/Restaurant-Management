@@ -1,0 +1,14 @@
+.navbar {
+    background: #cda45e;
+    background: linear-gradient(90deg, #cda45e 0%, rgba(255,255,255,1) 100%);
+    box-shadow: 0 2px 10px rgba(255, 255, 255, 0.3);
+    transition: all 0.3s;
+    margin-bottom: -20px;
+   top: 0;
+   left: 0;
+   right: 0;
+   z-index: 999;
+  }
+  .navbar:hover {
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.5);
+  }

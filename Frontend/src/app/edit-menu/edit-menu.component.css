@@ -1,0 +1,17 @@
+#editForm {
+    padding: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 10px;
+  }
+  
+  @media (max-width: 768px) {
+    #editForm {
+      padding: 10px;
+    }
+  
+    .form-group {
+      margin-bottom: 5px;
+    }
+  }
